@@ -1,0 +1,189 @@
+:root {
+  /* === RANGLAR === */
+  --yellow-color: #FFE743;
+  --grey-color: #EDEDED;
+  --blue-color: #0051FF;
+
+  /* === SECTION TITLE FONT SIZE === */
+  --section-title-xl: 48px;
+  --section-title-lg: 40px;
+  --section-title-md: 32px;
+  --section-title-sm: 28px;
+
+  /* === DESCRIPTION TITLE FONT SIZE === */
+  --desc-title-xl: 28px;
+  --desc-title-lg: 24px;
+  --desc-title-md: 20px;
+  --desc-title-sm: 18px;
+
+  /* === DESCRIPTION PARAGRAPH FONT SIZE === */
+  --desc-xl: 20px;
+  --desc-lg: 18px;
+  --desc-md: 16px;
+  --desc-sm: 14px;
+}
+
+
+.section-title {
+  font-size: var(--section-title-lg);
+  font-weight: 700;
+}
+
+.title {
+  font-size: var(--desc-title-lg);
+  font-weight: 600;
+}
+
+.description {
+  font-size: var(--desc-md);
+  color: var(--grey-color);
+}
+
+body {
+  overflow-x: hidden!important;
+}
+
+
+.register-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+.navbar {
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  font-size: 14px;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.btn-warning {
+  background-color: var(--yellow-color);
+  border: none;
+  font-size: 14px;
+}
+
+hr{
+    border: 1px solid black;
+    width: 100%;
+}
+
+
+.stats, .certificate{
+    background-color: var(--grey-color);
+}
+
+
+.bg-light {
+  background-color: #EDEDED !important; /* Sen aytgan grey rang */
+}
+
+
+
+.swiper-image {
+  display: block;
+  margin: auto;
+}
+
+
+/* ===== PLAY ICON (video ustidagi) ===== */
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: red;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* ====== SLIDER IMAGE STYLING ====== */
+.video-thumb img {
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+.video-thumb:hover img {
+  transform: scale(1.03);
+}
+
+/* ===== CUSTOM SWIPER BUTTONS ===== */
+.swiper-buttons .swiper-button-prev-custom,
+.swiper-buttons .swiper-button-next-custom {
+  width: 42px;
+  height: 42px;
+  background-color: rgb(17, 15, 15); /* Yoki #0051FF */
+  color: white;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-buttons .swiper-button-prev-custom:hover,
+.swiper-buttons .swiper-button-next-custom:hover {
+  background-color: #003bcc;
+  transform: scale(1.1);
+}
+
+.swiper-buttons .swiper-button-prev-custom i,
+.swiper-buttons .swiper-button-next-custom i {
+  pointer-events: none;
+}
+
+
+.consultation-section {
+  background-color: #f5f5f5;
+  padding: 40px 0;
+  font-size: 16px;
+}
+.consultation-section .consultation-text {
+  color: #333;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.consultation-section .btn-primary {
+  background-color: var(--blue-color);
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+.consultation-section .btn-primary:hover {
+  background-color: #003bcc;
+}
+
+/* FOOTER */
+.site-footer {
+  background-color: #111;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.site-footer h5 {
+  font-weight: 600;
+}
+.site-footer a {
+  color: white;
+  transition: 0.3s ease;
+}
+.site-footer a:hover {
+  color: var(--blue-color);
+}
+
+
+
