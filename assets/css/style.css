@@ -100,13 +100,35 @@ hr{
 .play-icon {
   position: absolute;
   top: 50%;
-  left: 35%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 48px;
   color: red;
   pointer-events: none;
   opacity: 0.9;
 }
+
+.video-slide {
+  display: flex;
+  justify-content: center; /* Rasmni gorizontalda markazga olish */
+}
+
+.video-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5; /* Baland rasm uchun, yoki 16/9, 1/1 — sinab ko‘rishingiz mumkin */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Sifatni saqlaydi, rasm konteynerni to‘ldiradi */
+  display: block;
+  border-radius: 12px;
+}
+
 
 /* ====== SLIDER IMAGE STYLING ====== */
 .video-thumb img {

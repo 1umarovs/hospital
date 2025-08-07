@@ -110,3 +110,20 @@ header {
 .offcanvas {
   height: 100vh !important;
 }
+
+
+.doctor-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .doctor-img {
+    margin-top: 2rem;
+  }
+
+  .why-us .col-md-4 {
+    margin-bottom: 2rem;
+  }
+}
