@@ -97,3 +97,48 @@ allThumbs.forEach(thumb => {
     currentIframe = iframe;
   });
 });
+
+
+   AOS.init({
+      duration: 800,
+      mirror: false,
+    });
+
+    // Sanash funksiyasi
+    function animateCounter(el, target, duration) {
+      let start = 0;
+      let startTime = null;
+
+      function update(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const progress = currentTime - startTime;
+        const rate = Math.min(progress / duration, 1);
+        const current = Math.floor(rate * target);
+        el.textContent = current;
+        if (current < target) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    const counters = document.querySelectorAll(".counter");
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute("data-target"));
+          animateCounter(el, target, 2000); // 2000ms = 2s
+
+          obs.unobserve(el);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
