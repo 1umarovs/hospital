@@ -23,10 +23,29 @@
   --desc-sm: 14px;
 }
 
+@media (max-width: 767.98px) {
+  :root {
+    --section-title-lg: 28px;
+  }
+  .section-title{
+    margin-bottom: 0px;
+  }
+  .my-5{
+    margin-top: 0px!important;
+    margin-bottom: 0px!important;
+  }
+}
+
 
 .section-title {
   font-size: var(--section-title-lg);
   font-weight: 700;
+}
+
+
+.counter{
+  font-weight: bold;
+  font-size: var(--section-title-xl);
 }
 
 .title {
@@ -97,47 +116,59 @@ hr{
 
 
 /* ===== PLAY ICON (video ustidagi) ===== */
+/* ====== Play Icon Styling ====== */
 .play-icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 48px;
-  color: red;
+  color: red; /* O'zingiz xohlagan rangga o'zgartirishingiz mumkin */
   pointer-events: none;
   opacity: 0.9;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  z-index: 2;
 }
 
+/* ====== Video Slide Wrapper ====== */
 .video-slide {
   display: flex;
-  justify-content: center; /* Rasmni gorizontalda markazga olish */
+  justify-content: center; /* Rasmni gorizontal markazga */
 }
 
+/* ====== Video Thumbnail Container ====== */
 .video-thumb {
   position: relative;
+  cursor: pointer;
   width: 100%;
-  aspect-ratio: 4 / 5; /* Baland rasm uchun, yoki 16/9, 1/1 — sinab ko‘rishingiz mumkin */
+  aspect-ratio: 16 / 9; /* 4/5 ham mumkin, sizga qaysi forma yoqsa */
   overflow: hidden;
   border-radius: 12px;
 }
 
+/* ====== Thumbnail Image Styling ====== */
 .video-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Sifatni saqlaydi, rasm konteynerni to‘ldiradi */
+  object-fit: cover; /* Sifatni saqlaydi */
   display: block;
-  border-radius: 12px;
-}
-
-
-/* ====== SLIDER IMAGE STYLING ====== */
-.video-thumb img {
   border-radius: 12px;
   transition: transform 0.3s ease;
 }
+
+/* ====== Hover Effekti ====== */
 .video-thumb:hover img {
   transform: scale(1.03);
 }
+
+/* ====== Iframe Styling (video ochilganda) ====== */
+.video-thumb iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
 
 /* ===== CUSTOM SWIPER BUTTONS ===== */
 .swiper-buttons .swiper-button-prev-custom,
@@ -207,5 +238,82 @@ hr{
   color: var(--blue-color);
 }
 
+.faq{
+  background-color: var(--grey-color);
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 15px 25px;
+  font-size: var(--desc-lg);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.faq-icon {
+  width: 30px;
+  height: 30px;
+  background: #000;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
 
 
+
+
+.faq-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon::before {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  padding: 0 25px;
+  font-size: var(--desc-md);
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 15px 25px;
+}
+
+
+
+
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-warning:hover .arrow {
+  transform: translateX(5px);
+}

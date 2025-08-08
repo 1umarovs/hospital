@@ -23,8 +23,6 @@
   --desc-sm: 14px;
 }
 
-
-
 @media (min-width: 1200px) {
   .section-title {
     font-size: var(--section-title-xl);
@@ -36,6 +34,8 @@
     font-size: var(--desc-xl);
   }
 }
+
+
 
 @media (max-width: 1199.98px) and (min-width: 992px) {
   .section-title {
