@@ -40,6 +40,17 @@
   
 }
 
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px; /* Yetarlicha katta qiymat beramiz */
+}
+
+
 
 .section-title {
   font-size: var(--section-title-lg);

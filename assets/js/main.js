@@ -33,9 +33,21 @@ const videoSwiper = new Swiper('.videoSwiper', {
 document.querySelectorAll(".faq-question").forEach(button => {
   button.addEventListener("click", () => {
     const faqItem = button.parentElement;
-    faqItem.classList.toggle("active");
+    const isActive = faqItem.classList.contains("active");
+
+    // Yopilgan bo‘lsa ochamiz, ochilgan bo‘lsa yopamiz
+    document.querySelectorAll(".faq-item").forEach(item => {
+      item.classList.remove("active");
+      item.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+    });
+
+    if (!isActive) {
+      faqItem.classList.add("active");
+      button.setAttribute("aria-expanded", "true");
+    }
   });
 });
+
 
 document.querySelectorAll('.scroll-link').forEach(link => {
   link.addEventListener('click', function (e) {
