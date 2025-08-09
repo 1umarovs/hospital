@@ -139,6 +139,7 @@ if (typeof videoSwiper !== 'undefined') {
    AOS.init({
       duration: 800,
       mirror: false,
+      once: true,
     });
 
     // Sanash funksiyasi
